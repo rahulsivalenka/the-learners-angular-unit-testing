@@ -36,9 +36,37 @@ describe('AppComponent', () => {
   it('should render title in a h1 tag', () => {
     console.log('it 3');
     fixture.detectChanges();
-    const compiled = de.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
+    const appEl = de.nativeElement;
+    expect(appEl.querySelector('h1').textContent).toContain(
       'Welcome to angular-unit-testing!'
     );
+  });
+
+  describe('add method', () => {
+    it('should accept two numbers', () => {
+      console.log('add');
+      // Arrange
+      let args;
+      spyOn(component, 'add').and.callFake((...args1) => {
+        console.log('fake add');
+        args = args1;
+      });
+
+      // Act
+      component.add(1, 2);
+
+      // Assert
+      expect(args.length).toBe(2);
+      expect(args).toEqual([1, 2]);
+    });
+
+    it('should add two numbers that are passed in', () => {
+      console.log('add 2');
+      // Act
+      const result = component.add(1, 2);
+
+      // Assert
+      expect(result).toBe(3);
+    });
   });
 });
