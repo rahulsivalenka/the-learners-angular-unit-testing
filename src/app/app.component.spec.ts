@@ -28,9 +28,9 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'angular-unit-testing'`, () => {
+  it(`should have as title 'the-learners-angular-unit-testing'`, () => {
     console.log('it 2');
-    expect(component.title).toEqual('angular-unit-testing');
+    expect(component.title).toEqual('the-learners-angular-unit-testing');
   });
 
   it('should render title in a h1 tag', () => {
@@ -38,7 +38,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const appEl = de.nativeElement;
     expect(appEl.querySelector('h1').textContent).toContain(
-      'Welcome to angular-unit-testing!'
+      'Welcome to the-learners-angular-unit-testing!'
     );
   });
 

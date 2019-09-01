@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'angular-unit-testing';
+  title = 'the-learners-angular-unit-testing';
 
   add(num1: number, num2: number) {
     console.log('original add');
